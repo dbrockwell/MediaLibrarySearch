@@ -80,10 +80,10 @@ namespace MediaLibrarySearch
                 } else if(choice == "3") {
                     Console.WriteLine("Enter a movie title or part of one");
                     string search = Console.ReadLine();
-                    int movieCount = movieFile.Movies.Where(m => m.title.Contains(search)).Count();
+                    int movieCount = movieFile.Movies.Where(m => m.title.Contains(search, StringComparison.OrdinalIgnoreCase)).Count();
                     Console.WriteLine($"There are {movieCount} movies with \"{search}\" in the title");
 
-                    var movieSearch = movieFile.Movies.Where(m => m.title.Contains(search));
+                    var movieSearch = movieFile.Movies.Where(m => m.title.Contains(search, StringComparison.OrdinalIgnoreCase));
                     foreach(Movie m in movieSearch)
                     {
                         Console.WriteLine(m.Display());
