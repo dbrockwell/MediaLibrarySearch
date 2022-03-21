@@ -18,6 +18,7 @@ namespace MediaLibrarySearch
             do{
                 Console.WriteLine("1) Add Movie");
                 Console.WriteLine("2) Display All Movies");
+                Console.WriteLine("3) Find Movie");
                 Console.WriteLine("Enter to quit");
                 choice = Console.ReadLine();
                 logger.Info("User choice: {Choice}", choice);
@@ -75,8 +76,10 @@ namespace MediaLibrarySearch
                     {
                         Console.WriteLine(m.Display());
                     }
+                } else if(choice == "3") {
+
                 }
-            } while (choice == "1" || choice == "2");
+            } while (choice == "1" || choice == "2" || choice == "3");
 
 
             logger.Info("Program ended");
